@@ -38,7 +38,6 @@ router.post('/', validateProject, (req, res) => {
 });
 
 router.post('/:id/actions', validateProjectId, validateAction, (req, res) => {
-    const id = req.params.id;
     const actionData = req.body;
     Actions.insert(actionData)
         .then(actions => {
